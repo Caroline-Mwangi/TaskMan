@@ -1,0 +1,48 @@
+body{
+    background: #FFEEE6;
+}
+
+.logo{
+    position: absolute;
+    margin-top: 0px;
+
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 79px;
+
+    background: linear-gradient(180deg, #E16F56 0%, rgba(208, 117, 51, 0.8924) 48.74%, rgba(255, 70, 30, 0.32) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.image{
+    position: absolute;
+    width: 900.71px;
+    height: 680.5px;
+    left: 1100px;
+    top: 288px;
+}
+
+.log-in{
+    box-sizing: border-box;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 1930px;
+    top: 15px;
+    background: rgba(225, 111, 86, 0.69);
+    border: 1px solid #000000;
+    border-radius: 20px;
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.log-in:hover{
+    opacity: 90%;
+    cursor: pointer;
+}

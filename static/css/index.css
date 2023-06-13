@@ -1,3 +1,117 @@
-p {
-    text-decoration: underline;
+body{
+    background: #FFEEE6;
+}
+
+.logo{
+    position: absolute;
+    margin-top: 0px;
+
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 79px;
+
+    background: linear-gradient(180deg, #E16F56 0%, rgba(208, 117, 51, 0.8924) 48.74%, rgba(255, 70, 30, 0.32) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.image{
+    position: absolute;
+    width: 900.71px;
+    height: 680.5px;
+    left: 1100px;
+    top: 288px;
+}
+
+p{
+    position: absolute;
+    width: 650px;
+    height: 350px;
+    left: 250px;
+    top: 304px;
+
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 44px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.get-started{
+    box-sizing: border-box;
+    position: absolute;
+    width: 219px;
+    height: 68px;
+    left: 445px;
+    top: 780px;
+    background: rgba(225, 111, 86, 0.69);
+    border: 1px solid #000000;
+    border-radius: 20px;
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.get-started:hover{
+    opacity: 90%;
+    cursor: pointer;
+}
+
+.sign-up{
+    box-sizing: border-box;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 1700px;
+    top: 15px;
+    background: rgba(225, 111, 86, 0.69);
+    border: 1px solid #000000;
+    border-radius: 20px;
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.sign-up:hover{
+    opacity: 90%;
+    cursor: pointer;
+}
+
+.log-in{
+    box-sizing: border-box;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 1930px;
+    top: 15px;
+    background: rgba(225, 111, 86, 0.69);
+    border: 1px solid #000000;
+    border-radius: 20px;
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.log-in:hover{
+    opacity: 90%;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
