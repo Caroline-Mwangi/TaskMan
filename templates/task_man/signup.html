@@ -10,14 +10,47 @@
         <link rel="stylesheet" href="{% static 'css/signup.css' %}">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" />
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Caslon+Display" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     </head>
     <body>
         <h1 class="logo"><a href="/">TaskMan</a></h1>
 
         <img src='./static/css/images/image.avif' class="image">
 
-        <button class="log-in">Log In</button>   
+        <button class="log-in">Log In</button> 
+        
+        <div class="signup-grp">
 
-        <script src="" async defer></script>
+            <h1 class="form-mainhead">SIGN UP</h1>
+            <h3 class="form-minihead">Join The TaskMan Community</h3>
+            <br><br><br><br><br><br><br><br><br>
+
+            <form action="/signup" method="post">
+            {% csrf_token %}    
+                <input type="text" name="fname" placeholder="First Name..." required>
+                <br><br><br><br><br>
+
+                <input type="text" name="lname" placeholder="Last Name..." required>
+                <br><br><br><br><br>
+
+                <input type="email" name="email" placeholder="Email Address..." required>
+                <br><br><br><br><br>
+
+                <input type="password" id="pass" name="pass" placeholder="Password..." required>
+                <br>
+                <i class="far fa-eye" id="eye"></i>
+                <br><br><br><br>
+
+                <input type="password" id="cpass" name="cpass" placeholder="Confirm Password..." required>
+                <br>
+                <i class="far fa-eye" id="cpeye"></i>
+                <br><br><br><br><br>
+
+                <button class="btn">Submit</button>
+
+            </form>
+        </div>
+
+        <script src="{% static 'js/signup.js' %}"></script>
     </body>
 </html>
