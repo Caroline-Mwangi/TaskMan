@@ -1,0 +1,105 @@
+body{
+    background: #FFEEE6;
+}
+
+.logo{
+    position: absolute;
+    margin-top: 0px;
+
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 79px;
+
+    background: linear-gradient(180deg, #E16F56 0%, rgba(208, 117, 51, 0.8924) 48.74%, rgba(255, 70, 30, 0.32) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.image{
+    position: absolute;
+    width: 900.71px;
+    height: 680.5px;
+    left: 1100px;
+    top: 288px;
+    border-radius: 20px;
+}
+
+.verify-grp{
+    position: absolute;
+    width: 629px;
+    height: 355px;
+    left: 270px;
+    top: 400px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 23px;
+    padding: 15px 15px 15px 15px;
+}
+
+.form-mainhead{
+    position: absolute;
+    width: 556px;
+    height: 80px;
+    text-align: center;
+    left: 40px;
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 55px;
+    line-height: 80px;
+    margin-top: 0%;
+
+}
+
+.form-minihead{
+    position: absolute;
+    width: 303px;
+    height: 30px;
+    text-align: center;
+    left: 160px;
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: rgba(225, 111, 86, 0.76);
+    top: 50px;
+}
+
+input{
+    position: absolute;
+    width: 525px;
+    height: 50px;
+    left: 45px;    
+    background: #f7d3c1;
+    opacity: 0.7;
+    border-radius: 15px;
+    border: transparent;   
+    padding-left: 15px; 
+}
+
+::placeholder{
+    font-size: 20px;
+    font-family: 'Libre Caslon Display';
+}
+
+.btn{
+    position: absolute;
+    width: 185px;
+    height: 58px;
+    left: 215px;
+    background: rgba(225, 111, 86, 0.69);
+    border-radius: 20px;
+    border: transparent;
+    font-family: 'Libre Caslon Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+}
+
+.btn:hover{
+    opacity: 90%;
+    cursor: pointer;
+}

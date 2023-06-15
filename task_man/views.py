@@ -5,3 +5,6 @@ def home(request):
 
 def signup(request):
     return render(request, "task_man/signup.html")
+
+def verify(request):
+    return render(request, "task_man/verify.html")

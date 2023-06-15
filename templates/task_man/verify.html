@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TaskMan</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/verify.css' %}">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Caslon+Display" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    </head>
+    <body>
+        <h1 class="logo"><a href="/">TaskMan</a></h1>
+
+        <img src='./static/css/images/image.avif' class="image">
+        
+        <div class="verify-grp">
+
+            <h1 class="form-mainhead">VERIFY YOUR EMAIL</h1>
+            <h3 class="form-minihead">Check your email and enter the OTP sent below...</h3>
+            <br><br><br><br><br><br><br><br>
+
+            <form action="/verify" method="post">
+            {% csrf_token %}    
+                <input type="text" name="otp-verify" placeholder="OTP..." required>
+                <br><br><br><br><br>
+
+                <button class="btn">Submit</button>
+
+            </form>
+        </div>
+
+        <script></script>
+    </body>
+</html>
