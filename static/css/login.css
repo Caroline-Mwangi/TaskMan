@@ -26,7 +26,7 @@ body{
     border-radius: 20px;
 }
 
-.log-in{
+.sign-up{
     box-sizing: border-box;
     position: absolute;
     width: 200px;
@@ -43,17 +43,17 @@ body{
     line-height: 35px;
 }
 
-.log-in:hover{
+.sign-up:hover{
     opacity: 90%;
     cursor: pointer;
 }
 
-.signup-grp{
+.login-grp{
     position: absolute;
     width: 629px;
-    height: 735px;
+    height: 500px;
     left: 270px;
-    top: 220px;
+    top: 350px;
     background: rgba(255, 255, 255, 0.35);
     border-radius: 23px;
 }
@@ -75,10 +75,10 @@ body{
 
 .form-minihead{
     position: absolute;
-    width: 303px;
+    width: 370px;
     height: 30px;
     text-align: center;
-    left: 162px;
+    left: 140px;
     font-family: 'Libre Caslon Display';
     font-style: normal;
     font-weight: 400;

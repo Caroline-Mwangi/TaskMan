@@ -8,3 +8,6 @@ def signup(request):
 
 def verify(request):
     return render(request, "task_man/verify.html")
+
+def login(request):
+    return render(request, "task_man/login.html")
