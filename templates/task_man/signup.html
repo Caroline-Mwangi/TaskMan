@@ -18,20 +18,18 @@
         <img src='./static/css/images/image.avif' class="image">
 
         <button class="log-in"><a href="/login">Log In</a></button> 
-
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-
-            <strong>Message:</strong> {{message}}
-
-        </div>
-        {% endfor %}
         
         <div class="signup-grp">
 
             <h1 class="form-mainhead">SIGN UP</h1>
             <h3 class="form-minihead">Join The TaskMan Community</h3>
             <br><br><br><br><br><br><br><br><br>
+
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    <strong>Message:</strong> {{ message }}
+                </div>    
+            {% endfor %}
 
             <form action="/signup" method="post">
             {% csrf_token %}    
