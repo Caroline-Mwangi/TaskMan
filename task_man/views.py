@@ -24,7 +24,7 @@ def signup(request):
         user = User(first_name=first_name, last_name=last_name, email=email, password=password)
         user.save()
         
-        messages.success(request, "Registration Successful!! Check your email for verification before you login.")
+        messages.success(request, f"Hello,{user.first_name} :) Registration Successful!! Check your email for verification before you login.")
         
     return render(request, "task_man/signup.html")
 
