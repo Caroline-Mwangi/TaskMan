@@ -13,4 +13,12 @@ class User(models.Model):
         super().save(*args, **kwargs)
         
     def __str__(self):
-        return self.usern
+        return self.first_name
+    
+class UserOTP(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    otp_secret = models.CharField(max_length=128)
+    otp_expiry = models.DateTimeField()
+    
+    def __str__(self):
+        return self.user.first_name
