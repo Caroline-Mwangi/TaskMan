@@ -23,11 +23,11 @@
 
             <h1 class="form-mainhead">SIGN UP</h1>
             <h3 class="form-minihead">Join The TaskMan Community</h3>
-            <br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
 
             {% for message in messages %}
                 <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                    <strong>Message:</strong> {{ message }}
+                    {{ message }}
                 </div>    
             {% endfor %}
 
@@ -50,7 +50,7 @@
                 <input type="password" id="cpass" name="cpass" placeholder="Confirm Password..." required>
                 <br>
                 <i class="far fa-eye" id="cpeye"></i>
-                <br><br><br><br><br>
+                <br><br><br><br>
 
                 <button class="btn">Submit</button>
 

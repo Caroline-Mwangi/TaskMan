@@ -51,7 +51,7 @@ body{
 .signup-grp{
     position: absolute;
     width: 629px;
-    height: 735px;
+    height: 745px;
     left: 270px;
     top: 220px;
     background: rgba(255, 255, 255, 0.35);
@@ -98,6 +98,7 @@ input{
     border-radius: 15px;
     border: transparent;   
     padding-left: 15px; 
+    margin-top: 10px;
 }
 
 ::placeholder{
@@ -129,6 +130,7 @@ i{
     position: relative;
     left: 92%;
     margin-left: -30px;
+    margin-top: 10px;
     cursor: pointer;
     color: black;
     opacity: 50%;
@@ -137,4 +139,17 @@ i{
 a{
     text-decoration: none;
     color: black;
+}
+
+.alert{
+    width: 300px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: rgba(214, 52, 52, 0.731);
+    opacity: 70%;
+    padding: 10px 10px 10px 10px;
+    margin-left: 145px;
+    margin-top: 20;
+    margin-bottom: 20px;
+    text-align: center;
 }
