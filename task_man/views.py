@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import User, UserOTP
+from .models import User
 from django.contrib import messages
 import pyotp
-from datetime import datetime, timedelta
 from django.core.mail import send_mail
 from django.conf import global_settings
-
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth import logout
 def home(request):
     return render(request, "task_man/index.html")
 
@@ -65,4 +65,32 @@ def verify(request):
     return render(request, "task_man/verify.html")
 
 def login(request):
+    if request.method == "POST":
+        email = request.POST['email']
+        password = request.POST['pass']
+        
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            messages.error(request, "User does not exist! Sign Up to Taskman to log in!")
+            return redirect('login')
+        
+        if user.is_active == True:
+            if check_password(password, user.password):
+                messages.success(request, "Login Successful!!")
+                return redirect('landing')
+            else:
+                messages.error(request, "Wrong Password!! Please try again!!")
+                return redirect('login')
+        else:
+            messages.error(request, "Oops! Your user account is not active.")
+        
     return render(request, "task_man/login.html")
+
+def landing(request):
+    return render(request, "task_man/landing.html")
+
+def log_out(request):
+    logout(request)
+    messages.success(request, "Logged out successfully!!")
+    return redirect('login')
