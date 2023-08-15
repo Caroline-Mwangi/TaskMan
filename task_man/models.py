@@ -14,11 +14,3 @@ class User(models.Model):
         
     def __str__(self):
         return self.first_name
-    
-class UserOTP(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    otp_secret = models.CharField(max_length=128)
-    otp_expiry = models.DateTimeField()
-    
-    def __str__(self):
-        return self.user.first_name
