@@ -15,3 +15,21 @@ confirm_eye.addEventListener("click", function(){
     const type = password.getAttribute("type") === "password" ? "text" : "password"
     password.setAttribute("type", type)
   })
+
+function checkPassStrength(){
+  const password = document.getElementById("pass").value;
+  const indicator = document.getElementById("passStrength");
+
+  const strength = zxcvbn(password);
+
+  indicator.innerHTML = `Password Strength: ${strength.score}/4`;
+
+  if (strength.score === 4) {
+    indicator.style.color = "green";
+  } else if (strength.score >= 2) { 
+    indicator.style.color = "orange";
+  } else {
+    indicator.style.color = "red";
+  }
+
+}
