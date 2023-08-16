@@ -37,8 +37,12 @@
                 <button class="btn">Submit</button>
 
             </form>
+            <div class="otp-resend">
+                <p>Resend OTP in <span id="countdown"></span> seconds: <p>
+                <a href="{% url 'send_otp' %}?resend=1" id="resend-otp">Resend OTP</a>              
+            </div>  
         </div>
 
-        <script></script>
+        <script src="{% static 'js/verify.js' %}"></script>
     </body>
 </html>

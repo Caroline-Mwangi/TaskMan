@@ -42,7 +42,7 @@ body{
     width: 556px;
     height: 80px;
     text-align: center;
-    left: 40px;
+    left: 55px;
     font-family: 'Libre Caslon Display';
     font-style: normal;
     font-weight: 400;
@@ -57,7 +57,7 @@ body{
     width: 303px;
     height: 30px;
     text-align: center;
-    left: 160px;
+    left: 180px;
     font-family: 'Libre Caslon Display';
     font-style: normal;
     font-weight: 400;
@@ -102,4 +102,15 @@ input{
 .btn:hover{
     opacity: 90%;
     cursor: pointer;
+}
+
+.otp-resend{
+    margin-left: 450px;
+    margin-top: 70px;
+    opacity: 55%;
+}
+
+#resend-otp {
+    margin-left: 40px;
+    margin-top: 0px;
 }
