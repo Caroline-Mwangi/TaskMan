@@ -4,7 +4,7 @@ from django.contrib import messages
 import pyotp
 from django.core.mail import send_mail
 from django.conf import global_settings
-from django.contrib.auth.hashers import check_password
+from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth import logout
 import datetime
 from django.utils import timezone
@@ -24,7 +24,6 @@ def signup(request):
         if User.objects.filter(email=email):
             messages.error(request, "This email is already registered!!")
             return redirect('signup')
-        
         elif password != cpassword:
             messages.error(request, "Passwords do not match! Please try again!")
             return redirect('signup')
@@ -111,6 +110,25 @@ def login(request):
             messages.error(request, "Oops! Your user account is not active.")
         
     return render(request, "task_man/login.html")
+
+def update(request):
+    if request.method == "POST":
+        email = request.POST['email']
+        new_password = request.POST['pass']
+        cpassword = request.POST['cpass']
+        
+        if not User.objects.filter(email=email):
+            messages.error(request, "User does not exist. Please enter a valid email!")
+            return redirect('update')
+        elif new_password != cpassword:
+            messages.error(request, "Passwords do not match! Please try again!")
+            return redirect('update')
+        else:
+            User.objects.filter(email=email).update(password=make_password(new_password))
+            messages.success(request, "Your password has been changed successfully!")
+            return redirect('login')
+        
+    return render(request, "task_man/update.html")
 
 def landing(request):
     return render(request, "task_man/landing.html")

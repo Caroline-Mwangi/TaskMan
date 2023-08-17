@@ -7,6 +7,7 @@ urlpatterns = [
     path('verify', views.verify, name="verify"),
     path('send_otp', views.send_otp, name="send_otp"),
     path('login', views.login, name="login"),
+    path('update', views.update, name="update"),
     path('landing', views.landing, name="landing"),
     path('logout', views.log_out, name="logout"),
 ]
