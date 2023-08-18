@@ -1,0 +1,90 @@
+body{
+    background: #FFEEE6;
+}
+
+.logo{
+    position: absolute;
+    margin-top: 0px;
+
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 79px;
+
+    background: linear-gradient(180deg, #E16F56 0%, rgba(208, 117, 51, 0.8924) 48.74%, rgba(255, 70, 30, 0.32) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.image{
+    position: absolute;
+    width: 800.71px;
+    height: 580.5px;
+    left: 650px;
+    display: flex;
+    justify-content: center;
+    top: 288px;
+    border-radius: 20px;
+    opacity: 40%;
+}
+
+.name{
+    float: right;
+    margin-top:0px;
+    margin-right: 10px;
+    font-size: 23.5px;
+    opacity: 60%;
+}
+
+i{
+    margin-left: 10px;
+    font-size: 40px;
+    color: rgba(153, 71, 53, 1);
+}
+
+.drop-btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+i:hover, i:focus{
+    color: black;
+}
+
+.drop-content{
+    position: absolute;
+    width: 100px;
+    height: 28px;
+    margin-top: 30px;
+    margin-left: 2055px;
+    margin-right: 10px;
+    display: none;
+    position: absolute;
+    border-radius: 18px;
+    border: 1px solid #000;
+    background: rgba(225, 111, 86, 0.69);
+    padding:5px 5px 5px 5px;
+    text-align: center;
+}
+
+.drop-content:hover{
+    background:transparent;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    top: 5px;
+    font-size: 20.5px;
+}
+
+a:hover{
+    color: rgba(153, 71, 53, 0.75);
+}
+
+.show {
+    display:flex;
+    justify-content: center;
+}

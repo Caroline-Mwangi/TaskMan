@@ -101,7 +101,7 @@ def login(request):
         
         if user.is_active == True:
             if check_password(password, user.password):
-                messages.success(request, "Login Successful!!")
+                request.session['first_name'] = user.first_name
                 return redirect('landing')
             else:
                 messages.error(request, "Wrong Password!! Please try again!!")
