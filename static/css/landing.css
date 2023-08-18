@@ -30,15 +30,16 @@ body{
 }
 
 .name{
-    float: right;
+    position: absolute;
+    margin-left: 1980px;
     margin-top:0px;
     margin-right: 10px;
     font-size: 23.5px;
-    opacity: 60%;
+    opacity: 55%;
 }
 
 i{
-    margin-left: 10px;
+    margin-left: 7px;
     font-size: 40px;
     color: rgba(153, 71, 53, 1);
 }
