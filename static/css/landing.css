@@ -1,5 +1,9 @@
 body{
     background: #FFEEE6;
+    width: 0vw;
+    height: 0vh;
+    overflow: hidden;
+    margin: 0;
 }
 
 .logo{
