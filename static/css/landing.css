@@ -2,7 +2,7 @@ body{
     background: #FFEEE6;
     width: 0vw;
     height: 0vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: 0;
 }
 
@@ -42,7 +42,8 @@ body{
     opacity: 55%;
 }
 
-i{
+.far{
+    margin-top: 2px;
     margin-left: 7px;
     font-size: 40px;
     color: rgba(153, 71, 53, 1);
@@ -92,4 +93,58 @@ a:hover{
 .show {
     display:flex;
     justify-content: center;
+}
+
+.main-head{
+    width: 416px;
+    text-align: center;
+    font-family: 'Love Ya Like A Sister';
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 860px;
+    margin-top: 70px;
+    margin-bottom: 25px;
+    background: linear-gradient(180deg, #151515 0%, rgba(128, 97, 74, 0.89) 48.74%, rgba(255, 70, 30, 0.32) 100%, rgba(33, 22, 20, 0.29) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tabs{
+    width: 1900px;
+    height: 105px;
+    flex-shrink: 0;
+    margin-left: 115px;
+    margin-top: 0px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.tasks{
+    width: 1953px;
+    height: 730px;
+    flex-shrink: 0;
+    margin-left: 115px;
+    margin-top: 40px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+svg{
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    margin-left: 1920px;
+    margin-top:7px;
+    border: 2px solid rgba(225, 111, 86, 0.69);
+    background: rgba(225, 111, 86, 0.69);
+    padding: 10px 10px 10px 10px;
+}
+
+svg:hover{
+    opacity: 80%;
+    cursor: pointer;
 }
