@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import User
+from .models import User, Task
 from django.contrib import messages
 import pyotp
 from django.core.mail import send_mail
@@ -8,6 +8,8 @@ from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth import logout
 import datetime
 from django.utils import timezone
+from rest_framework import viewsets
+from .serializers import taskModelSerializer
 
 def home(request):
     return render(request, "task_man/index.html")
@@ -137,3 +139,7 @@ def log_out(request):
     logout(request)
     messages.success(request, "Logged out successfully!!")
     return redirect('login')
+
+class taskViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = taskModelSerializer
