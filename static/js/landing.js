@@ -79,20 +79,36 @@ function fetchTasks(url) {
 
                 const taskText = document.createElement("span");
                 taskText.classList.add("task-text");
+
+                const taskIcon = document.createElement("span");
+                taskIcon.classList.add("task-icon");
+                taskIcon.innerHTML = "&#9998;";
+
+                const deleteIcon = document.createElement("span");
+                deleteIcon.classList.add("delete-icon");
+                deleteIcon.innerHTML = "&#128465;";
+
                 taskText.textContent = task.task;
 
                 const taskCheck = document.createElement("span");
                 taskCheck.classList.add("task-check");
 
+
                 taskLabel.appendChild(taskCheckbox);
                 taskLabel.appendChild(taskText);
                 taskLabel.appendChild(taskCheck);
+                taskLabel.appendChild(taskIcon);
+                taskLabel.appendChild(deleteIcon);
 
                 const taskDate = document.createElement("h3");
                 taskDate.textContent = `${task.task_date}, ${task.task_time}`;
 
+
+
+
                 taskItem.appendChild(taskLabel);
                 taskItem.appendChild(taskDate);
+
 
                 tasksContainer.appendChild(taskItem);
             });

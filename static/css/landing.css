@@ -312,6 +312,7 @@ svg:hover{
     width: 537px;
     height: 100px;
     flex-shrink: 0;
+    margin-top: 45px;
 }
 
 .task-name {
@@ -381,7 +382,7 @@ svg:hover{
     display: flex;
     width: 252px;
     height: 2px;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     flex-shrink: 0;
     color: rgba(0, 0, 0, 0.29);
@@ -391,4 +392,27 @@ svg:hover{
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.task-icon{
+    margin-top: 0px;
+    margin-left: 13px;
+    font-size: 25px;
+    color: #994735;
+    opacity: 0.6;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.delete-icon{
+    margin-top: 0px;
+    margin-left: 13px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #994735;
+    opacity: 0.6;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
