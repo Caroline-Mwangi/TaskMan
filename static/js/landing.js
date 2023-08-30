@@ -87,6 +87,9 @@ function fetchTasks(url) {
                 const deleteIcon = document.createElement("span");
                 deleteIcon.classList.add("delete-icon");
                 deleteIcon.innerHTML = "&#128465;";
+                deleteIcon.addEventListener("click", () => {
+                    deleteTask(`/api/tasks/${task.id}`);
+                });
 
                 taskText.textContent = task.task;
 
@@ -136,7 +139,7 @@ function createTask(url, data) {
     .catch(error => {
         console.error('Error creating task', error)
     })
-}
+};
 
 function updateTaskCompletion(url, data) {
     fetch(url, {
@@ -154,4 +157,24 @@ function updateTaskCompletion(url, data) {
     .catch(error => {
         console.error('Error updating task completion', error);
     });
-}
+};
+
+function deleteTask(url) {
+    fetch(url, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            fetchTasks('/api/tasks/');
+        } else {
+            console.error('Error deleting task:', response.statusText);
+        }
+    })
+    .catch (error => {
+        console.error('Error deleting task:', error);
+    });
+};

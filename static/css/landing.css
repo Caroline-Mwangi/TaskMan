@@ -416,3 +416,7 @@ svg:hover{
     background-color: transparent;
     cursor: pointer;
 }
+
+.delete-icon:hover{
+    opacity: 0.45;
+}
