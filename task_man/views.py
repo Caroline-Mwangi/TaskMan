@@ -9,6 +9,8 @@ from django.contrib.auth import logout
 import datetime
 from django.utils import timezone
 from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 from .serializers import taskModelSerializer
 
 def home(request):
@@ -143,3 +145,15 @@ def log_out(request):
 class taskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = taskModelSerializer
+    
+    def list(self, request, *args, **kwargs):
+        completed_param = request.GET.get('completed')
+        
+        if completed_param is not None:
+            completed = completed_param.lower() == 'true'
+            tasks = Task.objects.filter(completed=completed)
+        else:
+            tasks = Task.objects.all()
+            
+        serializer = self.get_serializer(tasks, many=True)
+        return Response(serializer.data)

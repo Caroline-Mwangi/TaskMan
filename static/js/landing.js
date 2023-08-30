@@ -20,14 +20,24 @@ $(document).ready(function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const tabs = document.querySelectorAll(".tab");
+    const tasksContainer = document.querySelector(".tasks"); 
 
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
             tabs.forEach(t => t.classList.remove("active"));
             tab.classList.add("active");
 
-        })
-    })
+            tasksContainer.innerHTML = '';
+
+            if (tab.id === "tab1") {
+                fetchTasks('/api/tasks/');
+            } else if (tab.id === "tab2") {
+                fetchTasks('/api/tasks/?completed=false');
+            } else if (tab.id === "tab3") {
+                fetchTasks('/api/tasks/?completed=true');
+            }
+        });
+    });
 });
 
 createTaskBtn.addEventListener("click", () => {
@@ -106,9 +116,6 @@ function fetchTasks(url) {
                 const taskDate = document.createElement("h3");
                 taskDate.textContent = `${task.task_date}, ${task.task_time}`;
 
-
-
-
                 taskItem.appendChild(taskLabel);
                 taskItem.appendChild(taskDate);
 
@@ -152,7 +159,20 @@ function updateTaskCompletion(url, data) {
     })
     .then(response => response.json())
     .then(updatedTask => {
-        fetchTasks('/api/tasks/');
+        const activeTab = document.querySelector(".tab.active");
+
+        if (activeTab) {
+            const activeTabId = activeTab.id;
+            if (activeTabId == 'tab1') {
+                fetchTasks('/api/tasks/');
+            } else if (activeTabId == 'tab2') {
+                fetchTasks('/api/tasks/?completed=false');
+            } else if (activeTabId == 'tab3') {
+                fetchTasks('/api/tasks/?completed=true');
+            }
+
+        }
+        
     })
     .catch(error => {
         console.error('Error updating task completion', error);
