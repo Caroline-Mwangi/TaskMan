@@ -43,20 +43,39 @@ document.addEventListener("DOMContentLoaded", function() {
 createTaskBtn.addEventListener("click", () => {
     overlay.style.display = "block";
     overlayBackground.style.display = "block";
+    saveTaskButton.textContent = "Create Task";
 });
+
+let updatingTaskId = null;
 
 saveTaskButton.addEventListener("click", () => {
     const taskInput = document.getElementById("taskInput").value;
     const taskDate = document.getElementById("taskDate").value;
     const taskTime = document.getElementById("taskTime").value;
 
-    const newTask = {
-        task: taskInput,
-        task_date: taskDate,
-        task_time: taskTime
-    };
+    if (updatingTaskId) {
+        const updatedTask = {
+            task: taskInput,
+            task_date: taskDate,
+            task_time: taskTime,
+        };
 
-    createTask('/api/tasks/', newTask);
+        updateTask(`/api/tasks/${updatingTaskId}/`,updatedTask);
+
+        updatingTaskId = null;
+    } else {
+        const newTask = {
+            task: taskInput,
+            task_date: taskDate,
+            task_time: taskTime
+        };
+    
+        createTask('/api/tasks/', newTask);
+    }
+
+    overlay.style.display = "none";
+    overlayBackground.style.display = "none";
+
 });
 
 overlayBackground.addEventListener("click", () => {
@@ -81,7 +100,11 @@ function fetchTasks(url) {
                 const taskCheckbox = document.createElement("input");
                 taskCheckbox.type = "checkbox";
                 taskCheckbox.classList.add("task-checkbox");
-                taskCheckbox.checked = task.completed;
+
+                taskCheckbox.checked = false;
+                if (task.completed) {
+                    taskCheckbox.checked = true;
+                }
 
                 taskCheckbox.addEventListener("change", () => {
                     updateTaskCompletion(`/api/tasks/${task.id}/`, { completed: taskCheckbox.checked });
@@ -93,6 +116,24 @@ function fetchTasks(url) {
                 const taskIcon = document.createElement("span");
                 taskIcon.classList.add("task-icon");
                 taskIcon.innerHTML = "&#9998;";
+
+                taskIcon.addEventListener("click", () => {
+                    updatingTaskId = task.id;
+                    const taskToUpdate = task;
+
+                    const taskInput = document.getElementById("taskInput");
+                    const taskDate = document.getElementById("taskDate");
+                    const taskTime = document.getElementById("taskTime");
+
+                    taskInput.value = taskToUpdate.task;
+                    taskDate.value = taskToUpdate.task_date;
+                    taskTime.value = taskToUpdate.task_time;
+
+                    overlay.style.display = "block";
+                    overlayBackground.style.display = "block";
+
+                    saveTaskButton.textContent = "Update Task";
+                });
 
                 const deleteIcon = document.createElement("span");
                 deleteIcon.classList.add("delete-icon");
@@ -110,11 +151,13 @@ function fetchTasks(url) {
                 taskLabel.appendChild(taskCheckbox);
                 taskLabel.appendChild(taskText);
                 taskLabel.appendChild(taskCheck);
-                taskLabel.appendChild(taskIcon);
-                taskLabel.appendChild(deleteIcon);
+                
+                
 
                 const taskDate = document.createElement("h3");
                 taskDate.textContent = `${task.task_date}, ${task.task_time}`;
+                taskDate.appendChild(taskIcon);
+                taskDate.appendChild(deleteIcon);
 
                 taskItem.appendChild(taskLabel);
                 taskItem.appendChild(taskDate);
@@ -198,3 +241,28 @@ function deleteTask(url) {
         console.error('Error deleting task:', error);
     });
 };
+
+function updateTask(url, data) {
+    fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(updatedTask => {
+        console.log('Task updated:', updatedTask);
+
+        fetchTasks('/api/tasks/');
+
+        document.getElementById("taskInput").value = '';
+        document.getElementById("taskDate").value = '';
+        document.getElementById("taskTime").value = '';
+        saveTaskButton.textContent = "Create Task";
+    })
+    .catch(error => {
+        console.error('Error updating task', error)
+    })
+}

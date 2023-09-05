@@ -397,7 +397,7 @@ svg:hover{
 .task-icon{
     margin-top: 0px;
     margin-left: 13px;
-    font-size: 25px;
+    font-size: 22px;
     color: #994735;
     opacity: 0.6;
     border: none;
@@ -407,8 +407,8 @@ svg:hover{
 
 .delete-icon{
     margin-top: 0px;
-    margin-left: 13px;
-    font-size: 25px;
+    margin-left: 10px;
+    font-size: 22px;
     font-weight: bold;
     color: #994735;
     opacity: 0.6;
