@@ -1,4 +1,6 @@
 const csrfToken = "{{ csrf_token }}";
+// const userDataElement = document.getElementById('userData');
+// const userId = userDataElement.getAttribute('data-user-id');
 const createTaskBtn = document.getElementById("createTaskBtn");
 const overlay = document.getElementById("overlay");
 const overlayBackground = document.getElementById("overlayBackground");

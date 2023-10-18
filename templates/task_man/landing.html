@@ -49,7 +49,8 @@
             <input type="time" id="taskTime" name="taskTime" placeholder="Time..." required>
             <br><br><br><br><br><br>
             <button class="btn" id="saveTaskButton">Create Task</button>
-        </div>        
+        </div>     
+        <div id="userData" data-user-id="{{ request.session.id }}"></div>   
         <script src="{% static 'js/landing.js' %}"></script>
     </body>
 </html>

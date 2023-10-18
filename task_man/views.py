@@ -106,6 +106,7 @@ def login(request):
         if user.is_active == True:
             if check_password(password, user.password):
                 request.session['first_name'] = user.first_name
+                request.session['id'] = user.id
                 return redirect('landing')
             else:
                 messages.error(request, "Wrong Password!! Please try again!!")
@@ -148,7 +149,7 @@ class taskViewSet(viewsets.ModelViewSet):
     
     def list(self, request, *args, **kwargs):
         completed_param = request.GET.get('completed')
-        
+
         if completed_param is not None:
             completed = completed_param.lower() == 'true'
             tasks = Task.objects.filter(completed=completed)
