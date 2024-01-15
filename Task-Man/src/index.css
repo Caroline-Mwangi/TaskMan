@@ -1,0 +1,53 @@
+body {
+  background: #ffeee6;
+  font-family: "Libre Caslon Display";
+}
+
+.logo {
+  font-family: "Love Ya Like A Sister";
+  font-size: 4vw;
+  background: linear-gradient(
+    180deg,
+    #e16f56 0%,
+    rgba(208, 117, 51, 0.8924) 48.74%,
+    rgba(255, 70, 30, 0.32) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.index-text {
+  width: 40vw;
+  height: 40vh;
+  margin-left: 7vw;
+  margin-top: 38vh;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.7vw;
+  line-height: 7vh;
+}
+
+.index-image {
+  margin-top: 30vh;
+  width: 50vw;
+  height: 42vw;
+}
+
+.index-btn {
+  background: rgba(225, 111, 86, 0.69);
+  width: 9.5vw;
+  height: 2.6vw;
+  margin-left: 22vw;
+  margin-top: 3vh;
+  font-size: 1.2vw;
+}
+
+.index-btn:hover{
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.sign-btn{
+    margin-right: 195px;
+}
