@@ -1,0 +1,23 @@
+.form{
+    margin-top: 22vh;
+    margin-left: 12vw;
+    width: 30vw;
+  }
+  
+  .form input{
+    background: #f7d3c1;
+  }
+  
+  .form-minihead{
+    color: rgba(225, 111, 86, 0.76);
+  }
+
+  .sub-btn{
+    background: rgba(225, 111, 86, 0.69);
+    font-size: 1.2vw;
+  }
+
+  .sub-btn:hover{
+    opacity: 80%;
+    cursor: pointer;
+  }

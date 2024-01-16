@@ -3,7 +3,9 @@ export default function Home() {
     <>
       <div className="d-flex justify-content-end">
         <button className="sign-btn index-btn border-secondary border-1 rounded-4 p-1 position-absolute btn-opacity-75-hover text-center">
-          Sign Up
+          <a className="link-underline-opacity-0 link-dark" href="/signup">
+            Sign Up
+          </a>
         </button>
         <button className="log-btn index-btn border-secondary border-1 rounded-4 p-1 position-absolute btn-opacity-75-hover text-center me-4">
           Log In
@@ -23,10 +25,12 @@ export default function Home() {
               management and take control of your life with TaskMan today!
             </p>
             <br />
-            <br/>
-            <br/>
+            <br />
+            <br />
             <button className="index-btn border-secondary border-1 rounded-4 p-1 position-absolute btn-opacity-75-hover text-center">
-              Get Started
+              <a className="link-underline-opacity-0 link-dark" href="/signup">
+                Get Started
+              </a>
             </button>
           </div>
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
