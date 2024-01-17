@@ -8,7 +8,9 @@ export default function Home() {
           </a>
         </button>
         <button className="log-btn index-btn border-secondary border-1 rounded-4 p-1 position-absolute btn-opacity-75-hover text-center me-4">
-          Log In
+          <a className="link-underline-opacity-0 link-dark" href="/login">
+            Log In
+          </a>
         </button>
       </div>
       <div className="container-fluid">
