@@ -1,23 +1,79 @@
-.form{
-    margin-top: 25vh;
-    margin-left: 12vw;
-    width: 30vw;
-  }
-  
-  .form input{
-    background: #f7d3c1;
-  }
-  
-  .form-minihead{
-    color: rgba(225, 111, 86, 0.76);
-  }
+.form {
+  margin-top: 25vh;
+  margin-left: 12vw;
+  width: 30vw;
+}
 
-  .sub-btn{
-    background: rgba(225, 111, 86, 0.69);
-    font-size: 1.2vw;
-  }
+.form input {
+  background: #f7d3c1;
+}
 
-  .sub-btn:hover{
-    opacity: 80%;
-    cursor: pointer;
-  }
+.form-minihead {
+  color: rgba(225, 111, 86, 0.76);
+}
+
+.sub-btn {
+  background: rgba(225, 111, 86, 0.69);
+  font-size: 1.2vw;
+}
+
+.sub-btn:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+.far {
+  color: rgba(153, 71, 53, 1);
+}
+
+.land-head {
+  font-family: "Love Ya Like A Sister";
+  font-size: 4.2vw;
+  background: linear-gradient(
+    180deg,
+    #151515 0%,
+    rgba(128, 97, 74, 0.89) 48.74%,
+    rgba(255, 70, 30, 0.32) 100%,
+    rgba(33, 22, 20, 0.29) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tabs {
+  width: 72vw;
+  background: rgba(249, 249, 249, 0.4);
+}
+
+.tab-text {
+  width: 15vw;
+  text-align: center;
+}
+
+.btn-tsk {
+  background-color: rgba(225, 111, 86, 0.5);
+}
+
+.btn-tsk:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.tab-text:hover {
+  color: rgba(225, 111, 86, 0.65);
+  cursor: pointer;
+}
+
+.tab-1 {
+  background: rgba(225, 111, 86, 0.75);
+}
+
+.tab-1:hover {
+  color: antiquewhite;
+}
+
+.tasks {
+  width: 77vw;
+  background: rgba(249, 249, 249, 0.4);
+}
