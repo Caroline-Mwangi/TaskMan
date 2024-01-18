@@ -14,7 +14,7 @@
 
 .sub-btn {
   background: rgba(225, 111, 86, 0.69);
-  font-size: 1.2vw;
+  font-size: 1vw;
 }
 
 .sub-btn:hover {
@@ -44,6 +44,7 @@
 .tabs {
   width: 72vw;
   background: rgba(249, 249, 249, 0.4);
+  font-size: 1.5vw;
 }
 
 .tab-text {
@@ -76,4 +77,12 @@
 .tasks {
   width: 77vw;
   background: rgba(249, 249, 249, 0.4);
+}
+
+.my-modal {
+  background-color: #ffeee6;
+}
+
+.my-modal-btn {
+  background-color: rgba(225, 111, 86, 0.5);
 }
