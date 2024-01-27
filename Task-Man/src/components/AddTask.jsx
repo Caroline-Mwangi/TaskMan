@@ -1,4 +1,33 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 export default function AddTask() {
+  const [task, setTask] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+
+  const navigate = useNavigate();
+
+  const AddTaskInfo = async () => {
+    let field = new FormData();
+
+    field.append("task", task);
+    field.append("date", date);
+    field.append("time", time);
+
+    await axios({
+      method: "post",
+      url: "http://127.0.0.1:8000/tasks/",
+      data: field,
+    }).then((response) => {
+      setTask("");
+      setDate("");
+      setTime("");
+      navigate("/landing");
+      
+    });
+  };
   return (
     <>
       <button
@@ -51,19 +80,22 @@ export default function AddTask() {
                 type="text"
                 className="form-control mt-3 mb-4 border-0 opacity-75"
                 placeholder="Task Name..."
-                name="name"
+                name="task"
+                onChange={(e) => setTask(e.target.value)}
               />
 
               <input
                 type="date"
                 className="form-control mt-3 mb-4 border-0 opacity-75"
                 name="date"
+                onChange={(e) => setDate(e.target.value)}
               />
 
               <input
                 type="time"
                 className="form-control mt-3 mb-4 border-0 opacity-75"
                 name="time"
+                onChange={(e) => setTime(e.target.value)}
               />
             </div>
             <div class="modal-footer">
@@ -74,7 +106,12 @@ export default function AddTask() {
               >
                 Close
               </button>
-              <button type="button" class="btn my-modal-btn">
+              <button
+                type="button"
+                class="btn my-modal-btn"
+                onClick={AddTaskInfo}
+                data-bs-dismiss="modal"
+              >
                 Add Task
               </button>
             </div>
