@@ -1,4 +1,5 @@
 import AddTask from "./AddTask";
+import AllTasks from "./AllTasks";
 
 export default function Landing() {
   return (
@@ -11,7 +12,7 @@ export default function Landing() {
               data-bs-toggle="dropdown"
             >
               Hello, User
-              <i className="ms-2 far fa-user-circle fs-5 opacity-75"></i>
+              <i className="ms-2 far fa-user-circle opacity-75"></i>
             </button>
             <ul className="dropdown-menu">
               <li>
@@ -45,7 +46,9 @@ export default function Landing() {
         </div>
       </div>
 
-      <div className="tasks d-flex justify-content-between fs-4 p-2 container-fluid rounded-4 p-5"></div>
+      <div className="tasks d-block p-2 container-fluid rounded-4 p-5">
+        <AllTasks />
+      </div>
     </>
   );
 }

@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Landing from "./components/Landing";
+import AllTasks from "./components/AllTasks";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/landing" element={<Landing />} />
+          <Route path="/tasks" element={<AllTasks />} />
         </Routes>
       </BrowserRouter>
     </>
