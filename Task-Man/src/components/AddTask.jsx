@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function AddTask() {
-  const [task, setTask] = useState("");
+  const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
@@ -12,7 +12,7 @@ export default function AddTask() {
   const AddTaskInfo = async () => {
     let field = new FormData();
 
-    field.append("task", task);
+    field.append("name", name);
     field.append("date", date);
     field.append("time", time);
 
@@ -21,7 +21,7 @@ export default function AddTask() {
       url: "http://127.0.0.1:8000/tasks/",
       data: field,
     }).then((response) => {
-      setTask("");
+      setName("");
       setDate("");
       setTime("");
       navigate("/landing");
@@ -80,8 +80,8 @@ export default function AddTask() {
                 type="text"
                 className="form-control mt-3 mb-4 border-0 opacity-75"
                 placeholder="Task Name..."
-                name="task"
-                onChange={(e) => setTask(e.target.value)}
+                name="name"
+                onChange={(e) => setName(e.target.value)}
               />
 
               <input

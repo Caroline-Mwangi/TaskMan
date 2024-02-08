@@ -64,11 +64,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware'
 ]
-
-ROOT_URLCONF = 'TaskMan.urls'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173"
 ]
+ROOT_URLCONF = 'TaskMan.urls'
+
 
 TEMPLATES = [
     {
