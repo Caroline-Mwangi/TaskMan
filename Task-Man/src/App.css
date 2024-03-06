@@ -88,11 +88,15 @@
   background-color: rgba(225, 111, 86, 0.5);
 }
 
-.task-details{
+.task-details {
   font-size: 1vw;
-  color: rgba(0, 0, 0, 0.29);;
+  color: rgba(0, 0, 0, 0.29);
 }
 
-.dropdown{
+.dropdown {
   font-size: 1.3vw;
+}
+
+.card {
+  background: rgba(249, 249, 249, 0.4);
 }

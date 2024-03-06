@@ -25,7 +25,7 @@ export default function AddTask() {
       setDate("");
       setTime("");
       navigate("/landing");
-      
+      location.reload();
     });
   };
   return (
