@@ -29,7 +29,7 @@ export default function Landing() {
 
       <div className="container">
         <div className="row">
-          <div className="col-sm-7 col-md-8">
+          <div className="col-sm-11 col-md-11">
             <div className="tabs d-flex justify-content-between mb-4 p-2 container-fluid rounded-4">
               <p className="tab-text tab-1 ms-5 mt-3 p-2 border border-black rounded-5">
                 All Tasks
@@ -38,7 +38,7 @@ export default function Landing() {
               <p className="tab-text me-5 mt-3 p-2">Completed</p>
             </div>
           </div>
-          <div className="col-sm-5 col-md-4">
+          <div className="col-sm-1 col-md-1">
             <div className="d-flex justify-content-end">
               <AddTask />
             </div>

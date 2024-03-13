@@ -12,6 +12,21 @@ export default function AllTasks() {
   useEffect(() => {
     getTasks();
   }, []);
+
+  const taskStatus = async (id, checked) => {
+    const updateTask = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, completed: checked };
+      }
+      return task;
+    });
+
+    setTasks(updateTask);
+
+    await axios.patch(`http://127.0.0.1:8000/tasks/${id}/`, {
+      completed: checked,
+    });
+  };
   return (
     <>
       {tasks.map((task) => (
@@ -21,8 +36,15 @@ export default function AllTasks() {
             type="checkbox"
             id={task.id}
             name="task_status"
+            checked={task.completed || false}
+            onChange={(e) => taskStatus(task.id, e.target.checked)}
           />
-          <label for={task.id}>{task.name}</label>
+          <label
+            for={task.id}
+            style={{ textDecoration: task.completed ? "line-through" : "none" }}
+          >
+            {task.name}
+          </label>
           <p className="task-details ms-4">
             {task.date}, <span className="ms-1 me-2">{task.time}</span>
             <Link to={`/tasks/${task.id}`}>
@@ -49,5 +71,3 @@ export default function AllTasks() {
     </>
   );
 }
-
-
