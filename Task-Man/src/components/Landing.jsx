@@ -1,7 +1,11 @@
+import { useState } from "react";
 import AddTask from "./AddTask";
 import AllTasks from "./AllTasks";
+import OngoingTasks from "./OngoingTasks";
+import CompletedTasks from "./CompletedTasks";
 
 export default function Landing() {
+  const [active, setActive] = useState("all");
   return (
     <>
       <div className="d-flex justify-content-end">
@@ -31,11 +35,30 @@ export default function Landing() {
         <div className="row">
           <div className="col-sm-11 col-md-11">
             <div className="tabs d-flex justify-content-between mb-4 p-2 container-fluid rounded-4">
-              <p className="tab-text tab-1 ms-5 mt-3 p-2 border border-black rounded-5">
+              <p
+                className={`tab-text  ms-5 mt-3 p-2  ${
+                  active === "all" ? "active" : ""
+                }`}
+                onClick={() => setActive("all")}
+              >
                 All Tasks
               </p>
-              <p className="tab-text mt-3 p-2">Ongoing</p>
-              <p className="tab-text me-5 mt-3 p-2">Completed</p>
+              <p
+                className={`tab-text mt-3 p-2 ${
+                  active === "ongoing" ? "active" : ""
+                }`}
+                onClick={() => setActive("ongoing")}
+              >
+                Ongoing
+              </p>
+              <p
+                className={`tab-text me-5 mt-3 p-2 ${
+                  active === "completed" ? "active" : ""
+                }`}
+                onClick={() => setActive("completed")}
+              >
+                Completed
+              </p>
             </div>
           </div>
           <div className="col-sm-1 col-md-1">
@@ -47,7 +70,9 @@ export default function Landing() {
       </div>
 
       <div className="tasks d-block p-2 container-fluid rounded-4 p-5">
-        <AllTasks />
+        {active === "all" && <AllTasks />}
+        {active === "ongoing" && <OngoingTasks />}
+        {active === "completed" && <CompletedTasks />}
       </div>
     </>
   );

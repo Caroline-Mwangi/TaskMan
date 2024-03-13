@@ -1,16 +1,19 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function AllTasks() {
+export default function CompletedTasks() {
   const [tasks, setTasks] = useState([]);
-  const getTasks = async () => {
-    const response = await axios.get("http://127.0.0.1:8000/tasks/");
+
+  const getCompletedTasks = async () => {
+    const response = await axios.get(
+      "http://127.0.0.1:8000/tasks/?completed=True"
+    );
     setTasks(response.data);
   };
 
   useEffect(() => {
-    getTasks();
+    getCompletedTasks();
   }, []);
 
   const taskStatus = async (id, checked) => {

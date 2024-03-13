@@ -1,16 +1,19 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function AllTasks() {
+export default function OngoingTasks() {
   const [tasks, setTasks] = useState([]);
-  const getTasks = async () => {
-    const response = await axios.get("http://127.0.0.1:8000/tasks/");
+
+  const getOngoingTasks = async () => {
+    const response = await axios.get(
+      "http://127.0.0.1:8000/tasks/?completed=False"
+    );
     setTasks(response.data);
   };
 
   useEffect(() => {
-    getTasks();
+    getOngoingTasks();
   }, []);
 
   const taskStatus = async (id, checked) => {
@@ -26,11 +29,11 @@ export default function AllTasks() {
     await axios.patch(`http://127.0.0.1:8000/tasks/${id}/`, {
       completed: checked,
     });
-
-    location.reload();
+    window.location.reload();
   };
   return (
     <>
+      {" "}
       {tasks.map((task) => (
         <div className="mb-4">
           <input

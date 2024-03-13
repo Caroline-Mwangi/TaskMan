@@ -66,11 +66,13 @@
   cursor: pointer;
 }
 
-.tab-1 {
+.active {
   background: rgba(225, 111, 86, 0.75);
+  border: solid black 0.5px;
+  border-radius: 20px;
 }
 
-.tab-1:hover {
+.active:hover {
   color: antiquewhite;
 }
 
